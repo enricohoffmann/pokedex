@@ -4,14 +4,22 @@
     --content-widt:1920px;
 }
 
+@font-face {
+    font-family: "Roboto";
+    src: url(../fonts/Roboto-VariableFont_wdth\,wght.ttf);
+}
 
 *{
     margin: 0;
     box-sizing: border-box;
 }
 
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
 header{
-    height: 80px;
+    height: 84px;
     position: sticky;
     top: 0;
     background-color: var(--bg-h-and-f);
@@ -40,4 +48,34 @@ header{
 
 .header-left>img{
     height: 40px;
+}
+
+.header-left>h1{
+    margin-left: 16px;
+    color: rgb(223, 218, 218);
+}
+
+.search-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:3px;
+}
+
+.search-form>label{
+    color: rgb(223, 218, 218);
+    font-size: 12px;
+}
+
+.search-form>input{
+    padding: 3px;
+}
+
+.search-form>p{
+    color: rgb(184, 3, 3);
+    font-size: 12px;
+}
+
+.d-none{
+    display: none;
 }
