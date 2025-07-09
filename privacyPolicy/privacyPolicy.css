@@ -1,0 +1,21 @@
+article{
+    max-width: var(--content-widt);
+    margin-left: auto;
+    margin-right: auto;
+    padding: 36px;
+}
+
+article h1, h3, h4{
+    margin-bottom: 12px;
+    margin-top: 12px;
+    color: var(--font-light-color);
+}
+
+article p, ul, li{
+    color: var(--font-light-color);
+}
+
+article a{
+    color: rgba(239, 239, 241, 0.5);
+    overflow-wrap: break-word;
+}
