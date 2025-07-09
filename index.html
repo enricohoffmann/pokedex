@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokedex</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./styles/pokeCard.css">
     <link rel="shortcut icon" href="./assets/icons/pokedex.svg" type="image/x-icon">
 </head>
 
@@ -25,11 +26,22 @@
     </header>
 
     <main>
-        <section class="pokedex-section d-none" id="pokedex-section">
-            <h1>Pokedex</h1>
+        <section id="pokedex-section" class="pokedex-section">
+            <div class="pokedex-card">
+                <div class="pokedex-card-header">
+                    <p>#1</p>
+                    <p>Bulbasaur</p>
+                </div>
+                <div class="pokedex-card-body">
+                    Bild!
+                </div>
+                <div class="pokedex-card-footer">
+                    Symbol(e)
+                </div>
+            </div>
         </section>
 
-        <section class="pokedex-empty-section">
+        <section id="pokedex-empty-section" class="pokedex-empty-section d-none">
             <p>nothing found...</p>
         </section>
 
