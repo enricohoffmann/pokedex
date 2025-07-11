@@ -5,10 +5,17 @@ async function getPokemonsWithLimit(limit = 20, offset = 0) {
 
     if(result.status === 200){
         let resultAsJson = await result.json();
-        myPokemons = resultAsJson['results'];
-        return true;
+
+        return{
+            result : true,
+            data : resultAsJson['results']
+        };
+
     }else{
-        return false;
+        return{
+            result : false,
+            data :null
+        };
     }
     
 }
@@ -17,8 +24,9 @@ async function getPokemonWithUrl(url) {
     let result = await getApiRequest(url);
 
     if(result.status === 200){
-        let resultAsJson = await result.json();
-        createOnePokemon(resultAsJson);
+        return{result: true, data: await result.json()};
+    }else{
+        return{result: false, data: null};
     }
 }
 

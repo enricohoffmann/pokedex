@@ -1,45 +1,44 @@
-let myPokemons = [];
-let myPokemonsWithDetails = [];
-
-
 
 async function createPokemonList(limit = 20, offset = 0) {
-    let resultList = await getPokemonsWithLimit(limit, offset);
-    if(resultList){
-        createPokemonDetailsList();
+    let result = await getPokemonsWithLimit(limit, offset);
+    if (result.result) {
+        return await createPokemonDetailsList(result.data);
+    } else {
+        return null;
     }
+
 }
 
-async function createPokemonDetailsList() {
+async function createPokemonDetailsList(myPokemons) {
+    let myPokemonsWithDetails = [];
     for (let index = 0; index < myPokemons.length; index++) {
-        await getPokemonWithUrl(myPokemons[index]['url']);
+        let pokemonResult = await getPokemonWithUrl(myPokemons[index]['url']);
+        if(pokemonResult.result){
+            myPokemonsWithDetails.push(createOnePokemon(pokemonResult.data));
+        }
     }
+    return myPokemonsWithDetails;
 }
 
 function createOnePokemon(jsonResult) {
-    let pokemon = {
-        'id' : jsonResult['id'],
-        'name' : jsonResult['species']['name'],
-        'abilities' : createAbilitiesString(jsonResult['abilities']),
-        'base_experience' : jsonResult['base_experience'],
-        'height' : jsonResult['height'],
+    return {
+        'id': jsonResult['id'],
+        'name': jsonResult['species']['name'],
+        'abilities': createAbilitiesString(jsonResult['abilities']),
+        'base_experience': jsonResult['base_experience'],
+        'height': jsonResult['height'],
         'weight': jsonResult['weight'],
         'imgPath': jsonResult['sprites']['other']['home']['front_default'],
-        'types' : createTypesWitchIcons(jsonResult['types']),
+        'types': createTypesWitchIcons(jsonResult['types']),
         'stats': jsonResult['stats']
     };
-
-    console.log(pokemon);
-    
-
-    myPokemonsWithDetails.push(pokemon);
 }
 
 
 function createAbilitiesString(abilities) {
-    if(abilities.lenght == 1){
+    if (abilities.length == 1) {
         return abilities[0]['ability']['name'];
-    }else{
+    } else {
         let ability = "";
         abilities.forEach(element => {
             ability += `${element['ability']['name']},`;
@@ -52,7 +51,7 @@ function createTypesWitchIcons(types) {
     let typesIconsBasePath = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-iii/colosseum/";
     for (let index = 0; index < types.length; index++) {
         let typeIndex = getTypeIdFromUrl(types[index]['type']['url']);
-        types[index]['type']['url'] = `${typesIconsBasePath}${typeIndex}.png`;      
+        types[index]['type']['url'] = `${typesIconsBasePath}${typeIndex}.png`;
     }
 
     return types;

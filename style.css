@@ -2,7 +2,7 @@
     --bg-h-and-f: #082129;
     --bg-main:#05171e;
     --font-light-color: rgb(223, 218, 218);
-    --content-widt:1920px;
+    --content-width:1920px;
 }
 
 a{
@@ -39,7 +39,7 @@ header{
 }
 
 .header-content{
-    max-width: var(--content-widt);
+    max-width: var(--content-width);
     margin-left: auto;
     margin-right: auto;
     display: flex;
@@ -110,7 +110,7 @@ footer{
     margin-left: auto;
     margin-right: auto;
     width: 100%;
-    max-width: var(--content-widt);
+    max-width: var(--content-width);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -126,13 +126,14 @@ footer{
 
 .pokedex-section{
     min-width: 100%;
-    max-width: var(--content-widt);
+    max-width: var(--content-width);
     min-height: calc(100vh - 250px);
     display: flex;
-    padding: 24px;
+    padding: 36px;
     justify-content: center;
+    align-items: center;
     overflow-x: scroll;
-    
+    flex-wrap: wrap;
 }
 
 .pokedex-section::-webkit-scrollbar{
@@ -147,12 +148,12 @@ footer{
 
 .pokedex-more-section{
     min-width: 100%;
-    max-width: var(--content-widt);
+    max-width: var(--content-width);
     display: flex;
     justify-content: center;
     padding: 24px;
     position: sticky;
-    bottom: 0;
+    bottom: 48px;
 }
 
 .button-more{
@@ -172,7 +173,7 @@ footer{
 
 .pokedex-empty-section{
     min-width: 100%;
-    max-width: var(--content-widt);
+    max-width: var(--content-width);
     min-height: calc(100vh - 250px);
     display: flex;
     padding: 24px;
