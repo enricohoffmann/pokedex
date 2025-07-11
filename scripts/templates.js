@@ -22,3 +22,13 @@ function getTypeLogos(types) {
     }
     return typeDivs;
 }
+
+
+function getLoadingSpinner(){
+    return `
+        <div class="loading-container">
+            <img src="./assets/icons/pokedex.svg" alt="">
+            <p>loading...</p>
+        </div>
+    `;
+}

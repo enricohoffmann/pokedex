@@ -3,7 +3,7 @@
 }
 
 .fighting{
-    background-color: rgb(204, 127, 26);
+    background-color: rgb(233, 55, 55);
 }
 
 .flying{
@@ -11,7 +11,7 @@
 }
 
 .poison{
-    background-color: rgb(211, 152, 238);
+    background-color: rgba(179, 87, 221, 0.767);
 }
 
 .ground{
@@ -19,11 +19,11 @@
 }
 
 .rock{
-    background-color: rgb(169, 71, 207);
+    background-color: rgb(207, 199, 88);
 }
 
 .bug{
-    background-color: rgb(158, 177, 51);
+    background-color: #a5ad4a;
 }
 
 .ghost{
@@ -35,7 +35,7 @@
 }
 
 .fire{
-    background-color: rgba(211, 59, 13, 0.966);
+    background-color: rgba(219, 98, 18, 0.842);
 }
 
 .water{
@@ -47,15 +47,15 @@
 }
 
 .electric{
-    background-color: rgb(216, 230, 27);
+    background-color: rgba(216, 230, 27, 0.596);
 }
 
 .psychic{
-    background-color: rgb(117, 44, 44);
+    background-color: rgb(190, 66, 149);
 }
 
 .ice{
-    background-color: rgb(13, 171, 199);
+    background-color: rgb(150, 232, 247);
 }
 
 .dragon{
@@ -67,7 +67,7 @@
 }
 
 .fairy{
-    background-color: rgb(63, 130, 168);
+    background-color: rgba(228, 131, 220, 0.712);
 }
 
 .stellar{

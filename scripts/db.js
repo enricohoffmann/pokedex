@@ -23,7 +23,7 @@ async function createPokemonDetailsList(myPokemons) {
 function createOnePokemon(jsonResult) {
     return {
         'id': jsonResult['id'],
-        'name': jsonResult['species']['name'],
+        'name': setFirstLetterInName(jsonResult['species']['name']),
         'abilities': createAbilitiesString(jsonResult['abilities']),
         'base_experience': jsonResult['base_experience'],
         'height': jsonResult['height'],
@@ -49,9 +49,15 @@ function createAbilitiesString(abilities) {
 
 function createTypesWitchIcons(types) {
     let typesIconsBasePath = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-iii/colosseum/";
+    let typesIconsBasePath18 = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-vi/x-y/";
     for (let index = 0; index < types.length; index++) {
         let typeIndex = getTypeIdFromUrl(types[index]['type']['url']);
-        types[index]['type']['url'] = `${typesIconsBasePath}${typeIndex}.png`;
+        if(typeIndex == 18){
+            types[index]['type']['url'] = `${typesIconsBasePath18}${typeIndex}.png`;
+        }else{
+            types[index]['type']['url'] = `${typesIconsBasePath}${typeIndex}.png`;
+        }
+        
     }
 
     return types;
@@ -62,4 +68,9 @@ function getTypeIdFromUrl(url) {
     urlWithoutHttps = urlWithoutHttps.slice(0, -1);
     let strArray = urlWithoutHttps.split('/');
     return strArray[4];
+}
+
+function setFirstLetterInName(name) {
+    let firstChar = name.slice(0,1).toUpperCase();
+    return `${firstChar}${name.slice(1, -1)}`;
 }

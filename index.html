@@ -15,7 +15,7 @@
     <script src="./scripts.js"></script>
 </head>
 
-<body onload="init()">
+<body onload="loadAndShow()">
     <header>
         <div class="header-content">
             <div class="header-left">
@@ -32,18 +32,10 @@
 
     <main>
         <section id="pokedex-section" class="pokedex-section">
-<!--             <div class="pokedex-card">
-                <div class="pokedex-card-header">
-                    <p>#1</p>
-                    <p>Bulbasaur</p>
-                </div>
-                <div class="pokedex-card-body">
-                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/1.png" alt="">
-                </div>
-                <div class="pokedex-card-footer">
-                    Symbol(e)
-                </div>
-            </div> -->
+            <div class="loading-container">
+                <img src="./assets/icons/pokedex.svg" alt="">
+                <p>loading...</p>
+            </div>
         </section>
 
         <section id="pokedex-empty-section" class="pokedex-empty-section d-none">
@@ -52,7 +44,7 @@
 
 
         <section class="pokedex-more-section">
-            <button class="button-more" type="button">Load more...</button>
+            <button id="load-button" class="button-more" type="button" onclick="loadMorePokemons()">Load more...</button>
         </section>
     </main>
 
