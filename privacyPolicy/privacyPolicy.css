@@ -19,3 +19,7 @@ article a{
     color: rgba(239, 239, 241, 0.5);
     overflow-wrap: break-word;
 }
+
+.privacy-header{
+    height: 72px;
+}

@@ -18,7 +18,8 @@ async function readPokemons(limit, offset) {
         renderPokemonsFromList();
         enableDisableLoadButton(true);
     }else{
-        //Fehlerseite anzeigen
+        cleanPokemonContainer();
+        renderElemetInPokedexSection(getSorry());
     }
     
 }
@@ -84,7 +85,6 @@ function startSerching(searchValue) {
     if(resultList.length > 0){
         renderPokemonsFromList(resultList);
     }else{
-        //nichts gefunden...
         cleanPokemonContainer();
         renderElemetInPokedexSection(getSorry());
     }

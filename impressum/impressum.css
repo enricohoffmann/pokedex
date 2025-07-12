@@ -17,3 +17,7 @@ article p{
 article a{
     color: rgba(239, 239, 241, 0.5);
 }
+
+.impressum-header{
+    height: 72px;
+}
