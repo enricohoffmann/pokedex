@@ -130,7 +130,7 @@ a {
 .pokedex-section {
     min-width: 100%;
     max-width: var(--content-width);
-    min-height: calc(100vh - 250px);
+    min-height: calc(100vh - 270px);
     display: flex;
     padding: 36px;
     justify-content: center;
@@ -177,7 +177,7 @@ a {
 .pokedex-empty-section {
     min-width: 100%;
     max-width: var(--content-width);
-    min-height: calc(100vh - 250px);
+    min-height: calc(100vh - 400px);
     display: flex;
     padding: 24px;
     justify-content: center;

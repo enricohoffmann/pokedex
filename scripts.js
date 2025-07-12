@@ -6,7 +6,7 @@ function loadAndShow() {
     cleanPokemonContainer();
     readPokemons(limit, offset);
     enableDisableLoadButton(false);
-    renderLoadingSpinner();
+    renderElemetInPokedexSection(getLoadingSpinner());
 }
 
 
@@ -23,18 +23,18 @@ async function readPokemons(limit, offset) {
     
 }
 
-function renderPokemonsFromList() {
+function renderPokemonsFromList(arrayList = myPokemonList) {
     cleanPokemonContainer();
     let pokemonContainer = document.getElementById('pokedex-section');
-    for (let i = 0; i < myPokemonList.length; i++) {
-        const pokemon = myPokemonList[i];
+    for (let i = 0; i < arrayList.length; i++) {
+        const pokemon = arrayList[i];
         pokemonContainer.innerHTML += getPokemonCard(pokemon);
     }
 }
 
-function renderLoadingSpinner() {
+function renderElemetInPokedexSection(element) {
     let pokemonContainer = document.getElementById('pokedex-section');
-    pokemonContainer.innerHTML += getLoadingSpinner();
+    pokemonContainer.innerHTML += element;
 }
 
 function cleanPokemonContainer() {
@@ -49,3 +49,46 @@ function loadMorePokemons() {
     offset += 20;
     loadAndShow();
 }
+
+function searchPokemons() {
+    let searchValue = document.getElementById('searchInput').value;
+
+    if(searchValue.length > 0 && searchValue.length < 3){
+        toggleElemetvisibility(false, "input-error-label");
+    }else if(searchValue.length >= 3){
+        toggleElemetvisibility(true, "input-error-label");
+        startSerching(searchValue);
+    }else{
+        toggleElemetvisibility(true, "input-error-label");
+        renderPokemonsFromList();
+    }
+}
+
+function toggleElemetvisibility(isValid, elementID) {
+    let label = document.getElementById(elementID);
+    if(!isValid && label.classList.contains('d-none')){
+        label.classList.remove('d-none');
+    }else if(!label.classList.contains('d-none') && isValid){
+        label.classList.add('d-none');
+    }
+    
+}
+
+function startSerching(searchValue) {
+    if(myPokemonList.length == 0){
+        return;
+    }
+
+    let resultList = myPokemonList.filter((pokemon) => pokemon['name'].toLowerCase().startsWith(searchValue.toLowerCase()));
+
+    if(resultList.length > 0){
+        renderPokemonsFromList(resultList);
+    }else{
+        //nichts gefunden...
+        cleanPokemonContainer();
+        renderElemetInPokedexSection(getSorry());
+    }
+  
+    
+}
+

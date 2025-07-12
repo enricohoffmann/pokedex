@@ -24,7 +24,7 @@
             </div>
             <form class="search-form">
                 <label for="searchInput">Search:</label>
-                <input type="text" id="searchInput" name="searchInput">
+                <input type="text" id="searchInput" name="searchInput" oninput="searchPokemons()">
                 <p id="input-error-label" class="d-none">min. 3 letter</p>
             </form>
         </div>
@@ -32,19 +32,14 @@
 
     <main>
         <section id="pokedex-section" class="pokedex-section">
-            <div class="loading-container">
-                <img src="./assets/icons/pokedex.svg" alt="">
-                <p>loading...</p>
+            <div id="pokedex-empty-section" class="pokedex-empty-section d-none">
+                <p>nothing found...</p>
             </div>
         </section>
 
-        <section id="pokedex-empty-section" class="pokedex-empty-section d-none">
-            <p>nothing found...</p>
-        </section>
-
-
         <section class="pokedex-more-section">
-            <button id="load-button" class="button-more" type="button" onclick="loadMorePokemons()">Load more...</button>
+            <button id="load-button" class="button-more" type="button" onclick="loadMorePokemons()">Load
+                more...</button>
         </section>
     </main>
 

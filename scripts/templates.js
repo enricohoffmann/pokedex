@@ -32,3 +32,9 @@ function getLoadingSpinner(){
         </div>
     `;
 }
+
+function getSorry() {
+    return `<div id="pokedex-empty-section" class="pokedex-empty-section">
+                <p>nothing found...</p>
+            </div>`;
+}
