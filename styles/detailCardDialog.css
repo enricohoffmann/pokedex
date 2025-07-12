@@ -4,7 +4,7 @@ dialog{
 }
 
 dialog::backdrop {
-    background: rgba(124, 124, 124, 0.671);
+    backdrop-filter: blur(5px)!important;
 }
 
 .dialog-open{
