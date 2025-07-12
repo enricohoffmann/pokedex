@@ -1,6 +1,6 @@
 function getPokemonCard(pokemon) {
     return `
-        <div class="pokedex-card">
+        <div class="pokedex-card" onclick="onDialogOpen(${pokemon['id']})">
             <div class="pokedex-card-header">
                 <p>#${pokemon['id']}</p>
                 <p>${pokemon['name']}</p>

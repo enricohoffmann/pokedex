@@ -1,0 +1,12 @@
+dialog{
+    padding: 0;
+    border: 0;
+}
+
+dialog::backdrop {
+    background: rgba(124, 124, 124, 0.671);
+}
+
+.dialog-open{
+    overflow: hidden;
+}

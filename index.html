@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./styles/pokeCard.css">
     <link rel="stylesheet" href="./styles/colors.css">
+    <link rel="stylesheet" href="./styles/detailCardDialog.css">
     <link rel="shortcut icon" href="./assets/icons/pokedex.svg" type="image/x-icon">
+    <script src="./scripts/pokeCard.js"></script>
     <script src="./scripts/db.js"></script>
     <script src="./scripts/apiFunction.js"></script>
     <script src="./scripts/templates.js"></script>
@@ -41,6 +43,11 @@
             <button id="load-button" class="button-more" type="button" onclick="loadMorePokemons()">Load
                 more...</button>
         </section>
+
+        <dialog id="detail-card-dialog" onclick="datailCardClose(event)">
+
+        </dialog>
+
     </main>
 
     <footer>
