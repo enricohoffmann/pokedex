@@ -1,7 +1,7 @@
 function getPokemonCard(pokemon) {
     return `
         <div class="pokedex-card" onclick="onDialogOpen(${pokemon['id']})">
-            <div class="pokedex-card-header">
+           <div class="pokedex-card-header">
                 <p>#${pokemon['id']}</p>
                 <p>${pokemon['name']}</p>
             </div>
@@ -11,6 +11,21 @@ function getPokemonCard(pokemon) {
             <div class="pokedex-card-footer">
                 ${getTypeLogos(pokemon['types'])}
             </div>
+        </div>
+    `;
+}
+
+function getPokemonDialogContent(pokemon) {
+    return `
+        <div class="pokedex-card-header">
+            <p>#${pokemon['id']}</p>
+            <p>${pokemon['name']}</p>
+        </div>
+        <div class="pokedex-card-body ${pokemon['types'][0]['type']['name']}">
+            <img src="${pokemon['imgPath']}" alt="Image from pokemon: ${pokemon['name']}">
+        </div>
+        <div class="pokedex-card-footer">
+            ${getTypeLogos(pokemon['types'])}
         </div>
     `;
 }
@@ -38,3 +53,5 @@ function getSorry() {
                 <p>nothing found...</p>
             </div>`;
 }
+
+

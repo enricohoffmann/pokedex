@@ -1,6 +1,16 @@
+
 dialog{
     padding: 0;
-    border: 0;
+    border: none !important;
+    margin: auto;
+    border-radius: 16px;
+    background-color: var(--bg-h-and-f);
+    box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.8);
+}
+
+dialog:focus{
+    border: none;
+    outline: none;
 }
 
 dialog::backdrop {
@@ -9,4 +19,76 @@ dialog::backdrop {
 
 .dialog-open{
     overflow: hidden;
+}
+
+.detail-card-container{
+    height: 500px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.detail-card-header{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 12px;
+    padding-right: 12px;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+}
+
+.detail-card-header p{
+    color: var(--font-light-color);
+}
+
+.detail-card-header p:nth-child(2){
+    text-align: center;
+    flex-grow: 1;
+}
+
+.detail-card-body{
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 16px;
+}
+
+.detail-card-body>img{
+    height: 250px;
+}
+
+.detail-card-footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    width: 100%;
+    height: 48px;
+}
+
+.detail-type-logo{
+    width: 60px;
+}
+
+.detail-card-nav{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+.detail-card-nav button{
+    flex-grow: 1;
+}
+
+.dialog-nav-btn-active:active{
+    border-bottom: 1px solid red;
+}
+
+.dialog-nav-btn-active:focus{
+    border-bottom: 1px solid red;
+    outline: none;
 }

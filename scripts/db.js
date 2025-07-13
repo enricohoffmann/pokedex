@@ -74,3 +74,12 @@ function setFirstLetterInName(name) {
     let firstChar = name.slice(0,1).toUpperCase();
     return `${firstChar}${name.slice(1, -1)}`;
 }
+
+function filterPokemonByName(searchValue) {
+    return myPokemonList.filter((pokemon) => pokemon['name'].toLowerCase().startsWith(searchValue.toLowerCase()));
+}
+
+function getPokemonByID(id) {
+    let filterPokemon = myPokemonList.filter((pokemon) => pokemon['id'] == id);
+    return filterPokemon.length > 0 ? filterPokemon[0] : null;
+}

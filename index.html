@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./styles/colors.css">
     <link rel="stylesheet" href="./styles/detailCardDialog.css">
     <link rel="shortcut icon" href="./assets/icons/pokedex.svg" type="image/x-icon">
-    <script src="./scripts/pokeCard.js"></script>
+    <script src="./scripts/detailCardDialog.js"></script>
     <script src="./scripts/db.js"></script>
     <script src="./scripts/apiFunction.js"></script>
     <script src="./scripts/templates.js"></script>
@@ -26,7 +26,8 @@
             </div>
             <form class="search-form">
                 <label for="searchInput" hidden>Search:</label>
-                <input type="text" id="searchInput" name="searchInput" oninput="searchPokemons()" placeholder="searching">
+                <input type="text" id="searchInput" name="searchInput" oninput="searchPokemons()"
+                    placeholder="searching">
                 <p id="input-error-label" class="d-none">min. 3 letter</p>
             </form>
         </div>
@@ -45,7 +46,22 @@
         </section>
 
         <dialog id="detail-card-dialog" onclick="datailCardClose(event)">
-
+            <div class="detail-card-container" id="detail-card-container">
+                <div class="detail-card-header">
+                    <p>#id</p>
+                    <p>Bulbasud</p>
+                </div>
+                <div class="detail-card-body">
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/2.png" alt="Image from pokemon: ">
+                </div>
+                <div class="detail-card-footer">
+                    Symbole
+                </div>
+                <nav class="detail-card-nav">
+                    <button type="button" class="dialog-nav-btn-active" active>main</button>
+                    <button type="button" class="dialog-nav-btn-active">stats</button>
+                </nav>
+            </div>
         </dialog>
 
     </main>

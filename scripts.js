@@ -80,7 +80,7 @@ function startSerching(searchValue) {
         return;
     }
 
-    let resultList = myPokemonList.filter((pokemon) => pokemon['name'].toLowerCase().startsWith(searchValue.toLowerCase()));
+    let resultList = filterPokemonByName(searchValue);
 
     if(resultList.length > 0){
         renderPokemonsFromList(resultList);
@@ -88,7 +88,6 @@ function startSerching(searchValue) {
         cleanPokemonContainer();
         renderElemetInPokedexSection(getSorry());
     }
-  
     
 }
 
