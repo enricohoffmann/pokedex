@@ -18,6 +18,7 @@ async function readPokemons(limit, offset) {
         myPokemonList = myPokemonList.concat(pokemonList);
         renderPokemonsFromList();
         enableDisableLoadButton(true);
+        enableDisableInput(true);
     }else{
         cleanPokemonContainer();
         renderElemetInPokedexSection(getSorry());
@@ -47,8 +48,13 @@ function enableDisableLoadButton(disEn) {
     document.getElementById('load-button').disabled = !disEn;
 }
 
+function enableDisableInput(disEn) {
+    document.getElementById('searchInput').disabled = !disEn;
+}
+
 function loadMorePokemons() {
     offset += 20;
+    enableDisableInput(false);
     loadAndShow();
 }
 

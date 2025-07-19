@@ -131,7 +131,7 @@ a {
 }
 
 .pokedex-section {
-    min-width: 100%;
+    width: 100%;
     max-width: var(--content-width);
     min-height: calc(100vh - 270px);
     display: flex;
@@ -140,6 +140,8 @@ a {
     align-items: center;
     overflow-x: scroll;
     flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .pokedex-section::-webkit-scrollbar {
@@ -153,13 +155,15 @@ a {
 }
 
 .pokedex-more-section {
-    min-width: 100%;
+    width: 100%;
     max-width: var(--content-width);
     display: flex;
     justify-content: center;
     padding: 24px;
     position: sticky;
     bottom: 48px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .button-more {
