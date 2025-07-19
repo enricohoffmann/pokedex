@@ -54,7 +54,7 @@ function getDetailCard(pokemon) {
         </div>
         <nav class="detail-card-nav">
             <button id="detail-card-main-button" type="button" class="dialog-nav-btn" onclick="detailCardNavButtonClick('main')" >main</button>
-            <button type="button" class="dialog-nav-btn" onclick="detailCardNavButtonClick('stats')">stats</button>
+            <button id="detail-card-stats-button" type="button" class="dialog-nav-btn" onclick="detailCardNavButtonClick('stats')">stats</button>
         </nav>
         <section id="detail-card-data-section" class="detail-card-data-section">
         </section>

@@ -36,8 +36,9 @@ function renderDetailCard() {
 
 function setDialogMainButtonActiv() {
     let dialogMainButton = document.getElementById('detail-card-main-button');
+    dialogMainButton.classList.add('active');
     dialogMainButton.click();
-    dialogMainButton.focus();
+    
 }
 
 function detailCardNavButtonClick(navButtonName) {
@@ -45,6 +46,31 @@ function detailCardNavButtonClick(navButtonName) {
         renderDetailCardDataSection(createMainTableWithValues());
     }else if(navButtonName === "stats"){
         renderDetailCardDataSection(createStatsTable());
+    }
+    toggleDetailCardNavButton(navButtonName);
+}
+
+function toggleDetailCardNavButton(buttonName) {
+    if(buttonName === "main"){
+        addClassToNavButton('detail-card-main-button', 'active');
+        removeClassFromButton('detail-card-stats-button', 'active');
+    }else{
+        addClassToNavButton('detail-card-stats-button', 'active');
+        removeClassFromButton('detail-card-main-button', 'active');
+    }
+}
+
+function addClassToNavButton(buttonID, classname) {
+    let button = document.getElementById(buttonID);
+    if(!button.classList.contains(classname)){
+        button.classList.add(classname);
+    }
+}
+
+function removeClassFromButton(buttonID, classname) {
+    let button = document.getElementById(buttonID);
+    if(button.classList.contains(classname)){
+        button.classList.remove(classname);
     }
 }
 
@@ -76,4 +102,29 @@ function createStatsTableRowsWithValues() {
     return statsRows;
 }
 
+function oneStepInPokemonArrayBack(){
+    let newID;
+    let indexOfCurrentPokemon = myPokemonList.indexOf(currentPokemon);
+    
+    if(indexOfCurrentPokemon - 1  < 0){
+        newID = myPokemonList[myPokemonList.length-1]['id'];
+    }else{
+        newID = myPokemonList[indexOfCurrentPokemon -1]['id'];
+    }
+   
+    readDataForDetailCard(newID);
+}
+
+function oneStepInPokemonArrayForward() {
+    let newID;
+    let indexOfCurrentPokemon = myPokemonList.indexOf(currentPokemon);
+
+    if(indexOfCurrentPokemon + 1 > myPokemonList.length - 1){
+        newID = myPokemonList[0]['id'];
+    }else{
+        newID = myPokemonList[indexOfCurrentPokemon+1]['id'];
+    }
+
+    readDataForDetailCard(newID);
+}
 

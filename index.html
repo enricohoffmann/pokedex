@@ -46,7 +46,19 @@
         </section>
 
         <dialog id="detail-card-dialog" onclick="datailCardClose(event)">
-            <div class="detail-card-container" id="detail-card-container">
+            <div class="detail-card">
+                <div>
+                    <button type="button" class="detail-card-btn" onclick="oneStepInPokemonArrayBack()">
+                        <img src="./assets/icons/arrow_back.svg" alt="Icon Arrow back">
+                    </button>
+                </div>
+                <div class="detail-card-container" id="detail-card-container">
+                </div>
+                <div>
+                    <button type="button" class="detail-card-btn" onclick="oneStepInPokemonArrayForward()">
+                        <img src="./assets/icons/arrow_forward.svg" alt="Icon Arrow forward">
+                    </button>
+                </div>
             </div>
         </dialog>
 

@@ -20,6 +20,31 @@ dialog::backdrop {
     overflow: hidden;
 }
 
+.detail-card{
+    display: flex;
+    justify-content: space-between;
+}
+
+.detail-card-btn{
+    border: none;
+    height: 100%;
+    width: 32px;
+    background-color: #18647e;
+    cursor: pointer;
+}
+
+.detail-card-btn>img{
+    height: 20px;
+}
+
+.detail-card-btn:focus{
+    outline: none;
+}
+
+.detail-card-btn:hover{
+    background-color: #4fb8db;
+}
+
 .detail-card-container {
     height: 560px;
     width: 360px;
@@ -91,17 +116,8 @@ dialog::backdrop {
     font-size: 14px;
 }
 
-.dialog-nav-btn:active {
-    border-bottom: 2px solid var(--border-color-btn);
-}
-
-.dialog-nav-btn:focus {
-    border-bottom: 2px solid var(--border-color-btn);
-    outline: none;
-}
-
-.dialog-nav-btn:hover:focus {
-    border-bottom: 2px solid var(--border-color-btn);
+.active{
+    border-bottom: 2px solid var(--border-color-btn)!important; 
 }
 
 .dialog-nav-btn:hover {
