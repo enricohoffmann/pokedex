@@ -21,7 +21,7 @@ dialog::backdrop {
 }
 
 .detail-card-container {
-    height: 540px;
+    height: 560px;
     width: 360px;
     display: flex;
     flex-direction: column;
@@ -91,20 +91,20 @@ dialog::backdrop {
     font-size: 14px;
 }
 
-.dialog-nav-btn-active:active {
+.dialog-nav-btn:active {
     border-bottom: 2px solid var(--border-color-btn);
 }
 
-.dialog-nav-btn-active:focus {
+.dialog-nav-btn:focus {
     border-bottom: 2px solid var(--border-color-btn);
     outline: none;
 }
 
-.dialog-nav-btn-active:hover:focus {
+.dialog-nav-btn:hover:focus {
     border-bottom: 2px solid var(--border-color-btn);
 }
 
-.dialog-nav-btn-active:hover {
+.dialog-nav-btn:hover {
     border-bottom: 2px solid var(--font-light-color);
 }
 

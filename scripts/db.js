@@ -30,20 +30,51 @@ function createOnePokemon(jsonResult) {
         'weight': jsonResult['weight'],
         'imgPath': jsonResult['sprites']['other']['home']['front_default'],
         'types': createTypesWitchIcons(jsonResult['types']),
-        'stats': jsonResult['stats']
+        'stats': createNewStatsArray(jsonResult['stats'])
     };
+}
+
+function createNewStatsArray(statsArray) {
+    let newStatsArray = [];
+    const maxBaseStatValue = getMaxBaseStatFromStats(statsArray);
+
+    statsArray.forEach((stat) => {
+        newStatsArray.push(
+            {
+                name: stat['stat']['name'],
+                base_stat: calculateStatInPercent(maxBaseStatValue, stat['base_stat'])
+            }
+        );
+    });
+
+    return newStatsArray;
+    
+}
+
+function calculateStatInPercent(maxValue, currenStatValue) {
+    return Number.parseInt((100 * currenStatValue) / maxValue);
+}
+
+function getMaxBaseStatFromStats(statsArray) {
+    let baseStatsArray = [];
+    statsArray.forEach((stat) => {
+        baseStatsArray.push(stat['base_stat']);
+    });
+    
+    return Math.max.apply(null, baseStatsArray);
 }
 
 
 function createAbilitiesString(abilities) {
+    
     if (abilities.length == 1) {
         return abilities[0]['ability']['name'];
     } else {
         let ability = "";
         abilities.forEach(element => {
-            ability += `${element['ability']['name']},`;
+            ability += `${element['ability']['name']}, `;
         });
-        return ability.slice(0, -1);
+        return ability.slice(0, -2);
     }
 }
 
