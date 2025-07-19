@@ -1,8 +1,10 @@
 let currentPokemon;
+let myCurrentViewList = [];
 
 function onDialogOpen(id) {
     toggleScrollOnBody();
     document.getElementById('detail-card-dialog').showModal();
+    myCurrentViewList = currentResultList.length > 0 ? currentResultList : myPokemonList;
     readDataForDetailCard(id);
 }
 
@@ -104,12 +106,12 @@ function createStatsTableRowsWithValues() {
 
 function oneStepInPokemonArrayBack(){
     let newID;
-    let indexOfCurrentPokemon = myPokemonList.indexOf(currentPokemon);
+    let indexOfCurrentPokemon = myCurrentViewList.indexOf(currentPokemon);
     
     if(indexOfCurrentPokemon - 1  < 0){
-        newID = myPokemonList[myPokemonList.length-1]['id'];
+        newID = myCurrentViewList[myCurrentViewList.length-1]['id'];
     }else{
-        newID = myPokemonList[indexOfCurrentPokemon -1]['id'];
+        newID = myCurrentViewList[indexOfCurrentPokemon -1]['id'];
     }
    
     readDataForDetailCard(newID);
@@ -117,12 +119,12 @@ function oneStepInPokemonArrayBack(){
 
 function oneStepInPokemonArrayForward() {
     let newID;
-    let indexOfCurrentPokemon = myPokemonList.indexOf(currentPokemon);
+    let indexOfCurrentPokemon = myCurrentViewList.indexOf(currentPokemon);
 
-    if(indexOfCurrentPokemon + 1 > myPokemonList.length - 1){
-        newID = myPokemonList[0]['id'];
+    if(indexOfCurrentPokemon + 1 > myCurrentViewList.length - 1){
+        newID = myCurrentViewList[0]['id'];
     }else{
-        newID = myPokemonList[indexOfCurrentPokemon+1]['id'];
+        newID = myCurrentViewList[indexOfCurrentPokemon+1]['id'];
     }
 
     readDataForDetailCard(newID);

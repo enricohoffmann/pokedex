@@ -126,23 +126,39 @@ dialog::backdrop {
 
 .detail-card-data-section {
     background-color: var(--bg-h-and-f);
+    height: 180px;
 }
 
 .detail-card-main-table {
     display: flex;
-    justify-content: flex-start;
+    flex-direction: column;
     margin-left: 24px;
     margin-right: 24px;
     color: var(--font-light-color);
-    font-size: 14px;
-    table-layout: fixed;
     margin-bottom: 36px;
     padding-top: 16px;
+    max-height: 160px;
+}
+
+.detail-card-main-row{
+    display: flex;
+    justify-content: space-between;
+}
+
+.detail-card-main-row p{
+    text-align: left;
 }
 
 .table-main-col-1 {
-    width: 110px;
+    width: 115px;
 }
+
+.table-main-col-2{
+    flex-grow: 1;
+    text-align: left;
+    word-wrap: break-word;
+}
+
 
 .detail-card-stats-table{
     width: 100%;

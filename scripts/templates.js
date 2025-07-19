@@ -63,28 +63,24 @@ function getDetailCard(pokemon) {
 
 function getMainTable(heightValue, weightValue, experianceValue, abilitiesValue) {
     return `
-        <table class="detail-card-main-table">
-            <tr>
-                <td>Height</td>
-                <td>:</td>
-                <td>${heightValue} m</td>
-            </tr>
-            <tr>
-                <td>Weight</td>
-                <td>:</td>
-                <td>${weightValue} kg</td>
-            </tr>
-            <tr>
-                <td class="table-main-col-1">Base experience</td>
-                <td>:</td>
-                <td>${experianceValue}</td>
-            </tr>
-            <tr>
-                <td>Abilities</td>
-                <td>:</td>
-                <td>${abilitiesValue}</td>
-            </tr>
-        </table>
+        <div class="detail-card-main-table">
+            <div class="detail-card-main-row">
+                <p class="table-main-col-1">Height:</p>
+                <p class="table-main-col-2">${heightValue} m</p>
+            </div>
+            <div class="detail-card-main-row">
+                <p class="table-main-col-1">Weight:</p>
+                <p class="table-main-col-2">${weightValue} kg</p>
+            </div>
+            <div class="detail-card-main-row">
+                <p class="table-main-col-1">Base experience:</p>
+                <p class="table-main-col-2">${experianceValue}</p>
+            </div>
+            <div class="detail-card-main-row">
+                <p class="table-main-col-1">Abilities:</p>
+                <p class="table-main-col-2">${abilitiesValue}</p>
+            </div>
+        </div>
     `;
 }
 

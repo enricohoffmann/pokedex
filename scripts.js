@@ -1,6 +1,7 @@
 let offset = 0;
 let limit = 20;
 let myPokemonList = [];
+let currentResultList = [];
 
 function loadAndShow() {
     cleanPokemonContainer();
@@ -62,6 +63,7 @@ function searchPokemons() {
     }else{
         toggleElemetvisibility(true, "input-error-label");
         renderPokemonsFromList();
+        currentResultList = [];
     }
 }
 
@@ -84,6 +86,7 @@ function startSerching(searchValue) {
 
     if(resultList.length > 0){
         renderPokemonsFromList(resultList);
+        currentResultList = resultList;
     }else{
         cleanPokemonContainer();
         renderElemetInPokedexSection(getSorry());
